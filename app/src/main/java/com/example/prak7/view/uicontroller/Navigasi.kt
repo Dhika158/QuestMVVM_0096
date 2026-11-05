@@ -24,3 +24,12 @@ fun SiswaApp(
             composable(route = Navigasi.Formulir.name){
                 //edit 3 : tambahkan variabel konteks
                 val konteks = LocalContext.current
+                FormSiswa(
+                    //edit 4 : parameter pilihanJK dan onSubmitButtonClicked
+                    pilihanJK = JenisK.map { id -> konteks.resources.getString(id) },
+                    onSubmitButtonClicked = {
+                        viewModel.setSiswa(it)
+                        navController.navigate(Navigasi.Detail.name)
+                    }
+                )
+            }
