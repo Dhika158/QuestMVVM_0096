@@ -19,3 +19,8 @@ fun SiswaApp(
         NavHost(
             navController = navController,
             startDestination = Navigasi.Formulir.name,
+
+            modifier = Modifier.padding(isiRuang)){
+            composable(route = Navigasi.Formulir.name){
+                //edit 3 : tambahkan variabel konteks
+                val konteks = LocalContext.current
